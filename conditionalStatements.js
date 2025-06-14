@@ -6,19 +6,20 @@
 // switch uses strict comparison (===).
 
 // ✅ Basic Syntax:
-switch (expression) {
-  case value1:
-    // code if expression === value1
-    break;
 
-  case value2:
-    // code if expression === value2
-    break;
+// switch (expression) {
+//   case value1:
+//     // code if expression === value1
+//     break;
 
-  default:
-    // code if no case matches
-    break;
-}
+//   case value2:
+//     // code if expression === value2
+//     break;
+
+//   default:
+//     // code if no case matches
+//     break;
+// }
 
 // ✅ Example 1: Simple switch case
 const fruit = "apple";
