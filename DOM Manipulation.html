@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="hq">fhalskghlsadhflk</h1>
+
+
+
+  <h1 class="text">asdfasdfasf</h1>
+<h1 class="text">asdfasdfasdffsadfasfsda</h1>
+
+
+<div class="box">asdfasdfasdfasdfsda</div>
+
+<div id="container">
+  <h1>ttt</h1>
+   <h1>OOO</h1>
+    <h1>PPP</h1>
+     <h1>LLL</h1>
+</div>
+
+<p><strong>innerHTML:</strong> <span id="htmlResult"></span></p>
+  <p><strong>innerText:</strong> <span id="textResult"></span></p>
+  <p><strong>textContent:</strong> <span id="contentResult"></span></p>
+
+
+
+  <script>
+
+  
+const container= document.getElementById("container");
+
+const firsChild=container.firstChild;
+
+container.remove(firsChild);
+
+
+
+
+
+    const head= document.getElementById("hq");
+
+    console.log(head.textContent);
+
+ 
+    const text=document.getElementsByClassName("text");
+
+    console.log(text(0).textContent);
+
+    const doc= document.querySelector(".box");
+
+    console.log(doc.textContent);
+
+
+
+    const textCOntatiner= document.getElementById("htmlResult")
+
+    console.log(textCOntatiner.innerHTML);
+
+
+    const textt= document.getElementById("textResult");
+
+    console.log(textt.innerText);
+    
+
+
+
+  </script>
+  
+</body>
+</html>
