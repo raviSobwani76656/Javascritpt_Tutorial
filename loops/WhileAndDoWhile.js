@@ -66,7 +66,7 @@ EXAMPLE 4 - Using continue inside while loop:
 let num = 1;
 while (num <= 5) {
   if (num === 3) {
-    num++;   // increment BEFORE continue to avoid infinite loop
+    num++; // increment BEFORE continue to avoid infinite loop
     continue;
   }
   console.log(num);
@@ -83,7 +83,6 @@ OUTPUT:
 ⚠ IMPORTANT:
 - If you don't increment before continue, you may create infinite loop.
 */
-
 
 /*
 ===========================================
@@ -172,7 +171,6 @@ OUTPUT:
 5
 */
 
-
 /*
 ===========================================
   CHEAT SHEET SUMMARY
@@ -193,4 +191,3 @@ OUTPUT:
   -> Skips current iteration and moves to next loop check
   -> Be careful to increment loop variable before continue to avoid infinite loops
 */
-

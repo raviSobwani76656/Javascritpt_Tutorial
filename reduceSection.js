@@ -106,5 +106,3 @@ console.log(deepFlatten(deeplyNested));
 // At each step: accumulator = function(accumulator, currentValue)
 
 //-------------------------------------------------------------
-
-
