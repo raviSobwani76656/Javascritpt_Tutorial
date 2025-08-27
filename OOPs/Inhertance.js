@@ -223,3 +223,32 @@ class Cat extends Animal {
 const cat3 = new Cat("shelly", 34);
 
 cat3.greet();
+
+class AnimalKingdom {
+  constructor(name, breed) {
+    (this.name = name), (this.breed = breed);
+  }
+
+  animalIntro() {
+    console.log(`the animal name is ${this.name} and ${this.breed}`);
+  }
+}
+
+class rat extends AnimalKingdom {
+  constructor(name, speed) {
+    super(name);
+    this.speed;
+  }
+
+  speed() {
+    console.log(`rat has a speed of 1km/hr `);
+  }
+}
+
+const Giraffe = new AnimalKingdom("tat", "Giraffe");
+
+Giraffe.animalIntro();
+
+const ratt = new rat("Robert", "1km/hr");
+
+ratt.speed();

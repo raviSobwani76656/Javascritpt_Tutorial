@@ -6,66 +6,52 @@
   <title>Document</title>
 </head>
 <body>
-  <h1 id="hq">fhalskghlsadhflk</h1>
-
-
-
-  <h1 class="text">asdfasdfasf</h1>
-<h1 class="text">asdfasdfasdffsadfasfsda</h1>
-
-
-<div class="box">asdfasdfasdfasdfsda</div>
-
-<div id="container">
-  <h1>ttt</h1>
-   <h1>OOO</h1>
-    <h1>PPP</h1>
-     <h1>LLL</h1>
+<div id="DIv">
+  <div id="first">One</div>
+   <div id="two">Two</div>
 </div>
 
-<p><strong>innerHTML:</strong> <span id="htmlResult"></span></p>
-  <p><strong>innerText:</strong> <span id="textResult"></span></p>
-  <p><strong>textContent:</strong> <span id="contentResult"></span></p>
 
 
 
   <script>
 
-  
-const container= document.getElementById("container");
+const fisrtDiv=document.getElementById("DIv");
 
-const firsChild=container.firstChild;
+const secondElement=document.getElementById("two");
 
-container.remove(firsChild);
+fisrtDiv.removeChild(secondElement)
 
+    const enterName= document.createElement("input");
+     enterName.setAttribute("id", "enterName");
+    enterName.setAttribute("type", "text");
 
-
-
-
-    const head= document.getElementById("hq");
-
-    console.log(head.textContent);
-
- 
-    const text=document.getElementsByClassName("text");
-
-    console.log(text(0).textContent);
-
-    const doc= document.querySelector(".box");
-
-    console.log(doc.textContent);
+    document.body.appendChild(enterName)
 
 
+    const password= document.createElement("input");
+     enterName.setAttribute("id", "password");
+    enterName.setAttribute("type", "text");
 
-    const textCOntatiner= document.getElementById("htmlResult")
-
-    console.log(textCOntatiner.innerHTML);
+    document.body.appendChild(password);
 
 
-    const textt= document.getElementById("textResult");
+    const heading = document.createElement("h1");
+heading.textContent = "Title at Top";
+document.body.prepend(heading);
 
-    console.log(textt.innerText);
-    
+    const submitButton=document.createElement("button");
+    submitButton.setAttribute("type", "submit");
+    submitButton.textContent="Submit"
+    document.body.appendChild(submitButton);
+
+
+
+submitButton.addEventListener("click", function (){
+  alert("form submitted");
+  const firstNameValue=enterName.value
+})
+
 
 
 

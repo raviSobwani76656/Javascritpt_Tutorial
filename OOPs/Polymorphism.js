@@ -55,3 +55,25 @@ greet(); // Output: Hello, Guest!
 - Behaves differently depending on the input type
 - This is achieved using JavaScript’s dynamic typing
 */
+
+class polymorishm {
+  speed() {
+    console.log("this is the first one");
+  }
+}
+
+class poly extends polymorishm {
+  speed() {
+    console.log("this is the second class");
+  }
+}
+
+class tothebatman {
+  speed() {
+    console.log("this is a perfect match");
+  }
+}
+
+const newArray = [new poly(), new tothebatman()];
+
+newArray.forEach((array) => array.speed());

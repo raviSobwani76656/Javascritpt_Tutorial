@@ -21,5 +21,8 @@ function factorial(num) {
 let x = factorial(5); // x = 120
 console.log(x);
 
-
 /*------------------------------------------------------------------------------------------------------------------ */
+
+function factorialCalculate(Num) {
+  let fac = 1;
+}

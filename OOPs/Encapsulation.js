@@ -69,4 +69,19 @@ console.log(myAccount.withdraw(300)); // ₹300 withdrawn successfully.
 console.log(myAccount.getBalance()); // Balance for Ravi: ₹1200
 
 // ❌ Trying to access private field directly
-console.log(myAccount.#balance); // ❌ SyntaxError: Private field '#balance' must be declared in an enclosing class
+// console.log(myAccount.#balance); // ❌ SyntaxError: Private field '#balance' must be declared in an enclosing class
+
+class Animal {
+  #age;
+  constructor(name, breed, age) {
+    (this.name = name), (this.breed = breed), (this.#age = age);
+  }
+
+  AmimalIntro() {
+    console.log(`this animal has a name of ${this.name} and ${this.breed}`);
+  }
+}
+
+const dog = new Animal("Robert", "germanSheperd", 34);
+
+dog.AmimalIntro();
