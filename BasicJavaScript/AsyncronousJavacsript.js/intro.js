@@ -10,7 +10,7 @@
 */
 console.log("Synchronous Example:");
 console.log("Start");
-for (let i = 0; i < 1e6; i++) {} // long blocking loop
+for (let i = 0; i < 16; i++) {} // long blocking loop
 console.log("End");
 
 /* =====================================================

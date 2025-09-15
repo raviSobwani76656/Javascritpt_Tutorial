@@ -6,59 +6,56 @@
   <title>Document</title>
 </head>
 <body>
-<div id="DIv">
-  <div id="first">One</div>
-   <div id="two">Two</div>
-</div>
+<form id="userForm">
+   <input id="nameInput" placeholder="Enter the name"/>
+   <input id="email" placeholder="Enter the email"/>
+  
+  <input id="passwordInput" placeholder="Enter the password"/>
+  <button id="submitButton">Submit</button>
 
-
-<
-
-  <script>
-
-const fisrtDiv=document.getElementById("DIv");
-
-const secondElement=document.getElementById("two");
-
-fisrtDiv.removeChild(secondElement)
-
-    const enterName= document.createElement("input");
-     enterName.setAttribute("id", "enterName");
-    enterName.setAttribute("type", "text");
-
-    document.body.appendChild(enterName)
-
-
-    const password= document.createElement("input");
-     enterName.setAttribute("id", "password");
-    enterName.setAttribute("type", "text");
-
-    document.body.appendChild(password);
-
-
-    const heading = document.createElement("h1");
-heading.textContent = "Title at Top";
-document.body.prepend(heading);
-
-    const submitButton=document.createElement("button");
-    submitButton.setAttribute("type", "submit");
-    submitButton.textContent="Submit"
-    document.body.appendChild(submitButton);
+</form>
+ <script>
+  const userForm= document.getElementById("userForm")
+  const inputFieldForName= document.getElementById("nameInput");
+  const inputFieldForEmail=document.getElementById("email")
+  const inputFieldForPassword=document.getElementById("passwordInput");
 
 
 
-submitButton.addEventListener("click", function (){
-  alert("form submitted");
-  const firstNameValue=enterName.value;
-  const passwordValue=password.value;
+  userForm.addEventListener("submit", (e)=>{
+e.preventDefault();
+
+ const error=[];
+
+ if(inputFieldForName.value.length<3){
+  error.push("Enter valid Name")
+  }
+
+const complexCharacters = /[@#%^*()]/;
+  
+  if(!inputFieldForPassword.value.match(complexCharacters)){
+ error.push("Create a Strong Password")
+  }
 
 
-})
+  if(!inputFieldForEmail.value.includes("@")|| inputFieldForEmail.value.length<3){
+    error.push("Enter a Valid Email Address")
+  }
 
 
+  if(error.length>0){
+    alert(error.join ("\n"))
+    console.log(error)
+  }else{
+    console.log("Form Submitted",inputFieldForName.value, inputFieldForEmail.value, inputFieldForPassword.value );
+    alert("Form submitted")
+  }
 
 
-  </script>
+  })
+
+  
+ </script>
   
 </body>
 </html>

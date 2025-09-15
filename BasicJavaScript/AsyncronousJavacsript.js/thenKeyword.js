@@ -83,11 +83,4 @@ errorPromise
     console.log("Always runs");
   });
 
-const multiplyPromise = new Promise((resolve, reject) => {
-  resolve(3);
-});
 
-multiplyPromise
-  .then((data) => data * 3)
-  .then((data) => data * 7)
-  .then((result) => console.log(result));

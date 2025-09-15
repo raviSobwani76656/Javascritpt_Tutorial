@@ -166,6 +166,7 @@ function findingFrequencyAndReturningTheHighestOne(string) {
   }
 
   let max = 0;
+  let 
 
   for (const key in freq) {
     if (freq[key] > max) {
