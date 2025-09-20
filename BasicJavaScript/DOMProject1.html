@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .quiz-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 400px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-bottom: 15px;
+    }
+    .option {
+      background: #f0f0f0;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .option:hover {
+      background: #e0e0e0;
+    }
+    .option.correct {
+      background: #4caf50;
+      color: white;
+    }
+    .option.wrong {
+      background: #e74c3c;
+      color: white;
+    }
+    #next-btn {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: none;
+    }
+    #next-btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h2 id="question">Loading...</h2>
+    <div id="options"></div>
+    <button id="next-btn">Next</button>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "Which language runs in the browser?",
+        options: ["Java", "C", "Python", "JavaScript"],
+        answer: "JavaScript"
+      },
+      {
+        question: "What does CSS stand for?",
+        options: [
+          "Central Style Sheets",
+          "Cascading Style Sheets",
+          "Cascading Simple Sheets",
+          "Cars SUVs Sailboats"
+        ],
+        answer: "Cascading Style Sheets"
+      },
+      {
+        question: "What does HTML stand for?",
+        options: [
+          "Hyper Text Markup Language",
+          "Hot Mail",
+          "How To Make Lasagna",
+          "Hyperlinks Text Markup Leveler"
+        ],
+        answer: "Hyper Text Markup Language"
+      }
+    ];
+
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const nextBtn = document.getElementById("next-btn");
+
+    let currentIndex = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      resetState();
+      const currentQuestion = quizData[currentIndex];
+      questionEl.textContent = currentQuestion.question;
+
+      currentQuestion.options.forEach(opt => {
+        const button = document.createElement("div");
+        button.textContent = opt;
+        button.classList.add("option");
+        optionsEl.appendChild(button);
+
+        button.addEventListener("click", () => selectAnswer(button, currentQuestion.answer));
+      });
+    }
+
+    function resetState() {
+      nextBtn.style.display = "none";
+      optionsEl.innerHTML = "";
+    }
+
+    function selectAnswer(selectedBtn, correctAnswer) {
+      const options = document.querySelectorAll(".option");
+      options.forEach(btn => {
+        if (btn.textContent === correctAnswer) {
+          btn.classList.add("correct");
+        } else {
+          btn.classList.add("wrong");
+        }
+        btn.style.pointerEvents = "none";
+      });
+
+      if (selectedBtn.textContent === correctAnswer) {
+        score++;
+      }
+      nextBtn.style.display = "block";
+    }
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex++;
+      if (currentIndex < quizData.length) {
+        loadQuestion();
+      } else {
+        showScore();
+      }
+    });
+
+    function showScore() {
+      resetState();
+      questionEl.textContent = `You scored ${score} out of ${quizData.length}!`;
+      nextBtn.textContent = "Restart";
+      nextBtn.style.display = "block";
+
+      nextBtn.onclick = () => {
+        currentIndex = 0;
+        score = 0;
+        nextBtn.textContent = "Next";
+        loadQuestion();
+      };
+    }
+
+    loadQuestion();
+  </script>
+</body>
+</html>
