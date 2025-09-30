@@ -5,6 +5,7 @@ MONGOOSE VIRTUALS - NOTES
 
 1. WHAT ARE VIRTUALS?
 - Virtuals are **fields that are not persisted in MongoDB**.
+- Vituals are not stored in database. They are part of mongoose OMD used for calculating dynamically somehitng in the schema.
 - They are computed dynamically based on existing document data.
 - Useful for derived values, convenience fields, or API responses without storing extra data.
 
