@@ -1,7 +1,7 @@
 const ar1 = [2, 5, 35, 36, 36, 324634, 6];
-const result = ar1.filter((num) => num <= 35);
+const result33 = ar1.filter((num) => num <= 35);
 
-console.log(result);
+console.log(result33);
 
 const users = [
   { name: "John", age: 25 },
@@ -13,6 +13,10 @@ const result1 = users.filter((item) => {
   return item.age >= 30;
 });
 
+const result = users.filter((user) => {
+  return user.age > 39;
+});
+
 console.log(result1);
 
-console.log(users);
+console.log(result);
