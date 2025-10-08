@@ -91,3 +91,15 @@ const user9 = {
 };
 
 user8.fullname.apply(user9, ["Kota", "India"]);
+
+function info(name, place) {
+  console.log(
+    `this is the ${name} of the person and he live in ${place} and he is ${this.age} years old `
+  );
+}
+
+const obj2 = {
+  age: 23,
+};
+
+info.apply(obj2, ["Ravi", "Kota"]);

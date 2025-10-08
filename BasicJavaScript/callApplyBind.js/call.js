@@ -92,3 +92,13 @@ const user9 = {
 };
 
 user8.fullname.call(user9, "Kota", "India");
+
+function nameCalling(city) {
+  console.log(`this is the ${this.name} and he live in ${city}`);
+}
+
+const obj2 = {
+  name: "Ravi",
+};
+
+nameCalling.call(obj2, "Kota");
