@@ -105,9 +105,3 @@ KEY DIFFERENCE:
 - SPREAD: Spreads values out of an array/object.
 -----------------------------------
 */
-
-function valuePrint(...num) {
-  console.log(num);
-}
-
-valuePrint(25, 235, 23, 2);

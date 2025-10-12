@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 /* 
 ===========================================
 ⚡ SHORT-CIRCUIT EVALUATION IN JAVASCRIPT
@@ -152,15 +144,6 @@ Now with optional chaining, you can simplify:
     user?.profile?.name
 --------------------------------------------
 */
-
-
-
-
-
-
-
-
-
 
 
 /*
