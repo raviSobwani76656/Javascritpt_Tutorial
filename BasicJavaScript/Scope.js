@@ -4,7 +4,7 @@
 =========================================
 
 👉 Definition:
-Scope defines where variables, functions, and objects are accessible in your code.
+42 defines where variables, functions, and objects are accessible in your code.
 It determines the visibility and lifetime of variables.
 
 JavaScript has three main types of scope:
