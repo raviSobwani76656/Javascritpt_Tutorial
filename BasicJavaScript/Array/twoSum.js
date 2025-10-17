@@ -15,4 +15,4 @@ function twoSum() {
 }
 
 console.log(twoSum());
-// Output: [ [23, 25], [25, 23], [46, 2], etc. depending on data ]
+

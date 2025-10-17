@@ -131,5 +131,4 @@ console.log("Global z after block:", z); // 20
 - Shadowing happens when inner scope variable has the same name as outer scope.
 - Inner scope always takes priority when resolving variables.
 - Outer variable remains unchanged outside the inner scope.
-- Proper understanding prevents bugs, especially in nested functions or blocks.
-*/
+
